@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 
 interface IPropsSlide {
-  label: string;
+  title: string;
   isRight?: boolean;
 }
 
@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get('window');
 export const SLIDE_HEIGHT = height * 0.61;
 
 export function Slide(props: IPropsSlide) {
-  const { label, isRight } = props;
+  const { title, isRight } = props;
 
   const transform = [
     { translateY: (SLIDE_HEIGHT - 100) / 2 },
@@ -22,7 +22,7 @@ export function Slide(props: IPropsSlide) {
   return (
     <View style={styles.container}>
       <View style={[styles.titleContainer, { transform }]}>
-        <Text style={styles.title}>{label}</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </View>
   );

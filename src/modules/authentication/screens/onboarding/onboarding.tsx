@@ -1,29 +1,61 @@
-import React from 'react';
-import { View, StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Slide, SLIDE_HEIGHT } from './components';
+import React, { useRef } from 'react';
+import { View, StyleSheet, Dimensions } from 'react-native';
+import Animated, { multiply } from 'react-native-reanimated';
+import { Slide, SLIDE_HEIGHT, SubSlide } from './components';
+import { interpolateColor, useScrollHandler } from 'react-native-redash';
+import { slides } from './slides';
 
 const { width } = Dimensions.get('window');
 
+const BORDER_RADIUS = 75;
+
 export function Onboarding() {
+  const scroll = useRef<Animated.ScrollView>(null);
+  const { scrollHandler, x } = useScrollHandler();
+
+  const backgroundColor = interpolateColor(x, {
+    inputRange: slides.map((_, index) => width * index),
+    outputRange: slides.map(({ color }) => color),
+  });
+
+  const onPressHandler = (index: number) => () => {
+    if (!scroll.current) {
+      return;
+    }
+    scroll.current.getNode().scrollTo({ x: width * (index + 1), animated: true });
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.slider}>
-        <ScrollView
+      <Animated.View style={[styles.slider, { backgroundColor }]}>
+        <Animated.ScrollView
+          ref={scroll}
           horizontal
           snapToInterval={width}
           decelerationRate="fast"
           showsHorizontalScrollIndicator={false}
           bounces={false}
+          {...scrollHandler}
         >
-          <Slide label="Relaxed" />
-          <Slide label="Playful" isRight />
-          <Slide label="Excentric" />
-          <Slide label="Funky" isRight />
-        </ScrollView>
-      </View>
+          {slides.map(({ title }, index) => (
+            <Slide key={index} {...{ title }} isRight={!!(index % 2)} />
+          ))}
+        </Animated.ScrollView>
+      </Animated.View>
       <View style={styles.footer}>
-        <View style={{ ...StyleSheet.absoluteFillObject, backgroundColor: 'cyan' }}></View>
-        <View style={{ flex: 1, backgroundColor: 'white', borderTopLeftRadius: 75 }}></View>
+        <Animated.View style={{ ...StyleSheet.absoluteFillObject, backgroundColor }} />
+        <Animated.View
+          style={[
+            styles.footerContent,
+            { width: width * slides.length },
+            { transform: [{ translateX: multiply(x, -1) }] },
+          ]}
+        >
+          {slides.map(({ subtitle, description }, index) => {
+            const last = index + 1 === slides.length;
+            return <SubSlide key={index} onPress={onPressHandler(index)} {...{ subtitle, description, last }} />;
+          })}
+        </Animated.View>
       </View>
     </View>
   );
@@ -34,6 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  slider: { height: SLIDE_HEIGHT, borderBottomRightRadius: 75, backgroundColor: 'cyan' },
+  slider: { height: SLIDE_HEIGHT, borderBottomRightRadius: BORDER_RADIUS },
   footer: { flex: 1 },
+  footerContent: { flex: 1, backgroundColor: 'white', borderTopLeftRadius: BORDER_RADIUS, flexDirection: 'row' },
 });
