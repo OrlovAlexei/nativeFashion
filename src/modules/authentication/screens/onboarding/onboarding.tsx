@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import Animated, { multiply } from 'react-native-reanimated';
-import { Slide, SLIDE_HEIGHT, SubSlide } from './components';
+import Animated, { multiply, divide } from 'react-native-reanimated';
+import { Slide, SLIDE_HEIGHT, SubSlide, Dot } from './components';
 import { interpolateColor, useScrollHandler } from 'react-native-redash';
 import { slides } from './slides';
 
@@ -44,18 +44,27 @@ export function Onboarding() {
       </Animated.View>
       <View style={styles.footer}>
         <Animated.View style={{ ...StyleSheet.absoluteFillObject, backgroundColor }} />
-        <Animated.View
-          style={[
-            styles.footerContent,
-            { width: width * slides.length },
-            { transform: [{ translateX: multiply(x, -1) }] },
-          ]}
-        >
-          {slides.map(({ subtitle, description }, index) => {
-            const last = index + 1 === slides.length;
-            return <SubSlide key={index} onPress={onPressHandler(index)} {...{ subtitle, description, last }} />;
-          })}
-        </Animated.View>
+        <View style={styles.footerContent}>
+          <View style={styles.pagination}>
+            {slides.map((_, index) => (
+              <Dot key={index} index={index} currentIndex={divide(x, width)} />
+            ))}
+          </View>
+
+          <Animated.View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              width: width * slides.length,
+              transform: [{ translateX: multiply(x, -1) }],
+            }}
+          >
+            {slides.map(({ subtitle, description }, index) => {
+              const last = index + 1 === slides.length;
+              return <SubSlide key={index} onPress={onPressHandler(index)} {...{ subtitle, description, last }} />;
+            })}
+          </Animated.View>
+        </View>
       </View>
     </View>
   );
@@ -68,5 +77,12 @@ const styles = StyleSheet.create({
   },
   slider: { height: SLIDE_HEIGHT, borderBottomRightRadius: BORDER_RADIUS },
   footer: { flex: 1 },
-  footerContent: { flex: 1, backgroundColor: 'white', borderTopLeftRadius: BORDER_RADIUS, flexDirection: 'row' },
+  footerContent: { flex: 1, backgroundColor: 'white', borderTopLeftRadius: BORDER_RADIUS },
+  pagination: {
+    ...StyleSheet.absoluteFillObject,
+    flexDirection: 'row',
+    height: BORDER_RADIUS,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
