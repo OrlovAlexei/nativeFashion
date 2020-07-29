@@ -1,6 +1,7 @@
 import React from 'react';
 import { RectButton } from 'react-native-gesture-handler';
 import { Text, StyleSheet } from 'react-native';
+import { useTheme } from '../../../../../theme/theme';
 
 interface IPropsButton {
   label: string;
@@ -9,10 +10,12 @@ interface IPropsButton {
 }
 
 export function Button(props: IPropsButton) {
+  const { colors } = useTheme();
+
   const { label, variant = 'default', onPress } = props;
 
-  const backgroundColor = variant === 'primary' ? '#2CB9B0' : 'rgba(12,13,52,0.05)';
-  const color = variant === 'primary' ? 'white' : '#0C0D34';
+  const backgroundColor = variant === 'primary' ? colors.primary : colors.white;
+  const color = variant === 'primary' ? 'white' : colors.body;
 
   return (
     <RectButton style={[styles.container, { backgroundColor }]} {...{ onPress }}>

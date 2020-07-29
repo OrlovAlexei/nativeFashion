@@ -8,5 +8,9 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true
+    // "baseUrl": "./src",
+    // "paths": {
+    //   "@theme/*": ["modules/theme/index.ts"]
+    // }
   }
 }
