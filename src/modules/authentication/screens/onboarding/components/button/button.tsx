@@ -1,11 +1,11 @@
 import React from 'react';
 import { RectButton } from 'react-native-gesture-handler';
-import { Text, StyleSheet } from 'react-native';
-import { useTheme } from '../../../../../theme/theme';
+import { StyleSheet } from 'react-native';
+import { useTheme, Text } from '../../../../../theme';
 
 interface IPropsButton {
   label: string;
-  variant?: 'default' | 'primary';
+  variant?: 'default' | 'primary' | 'transparent';
   onPress: () => void;
 }
 
@@ -14,12 +14,15 @@ export function Button(props: IPropsButton) {
 
   const { label, variant = 'default', onPress } = props;
 
-  const backgroundColor = variant === 'primary' ? colors.primary : colors.white;
-  const color = variant === 'primary' ? 'white' : colors.body;
+  const backgroundColor =
+    variant === 'primary' ? colors.primary : variant === 'transparent' ? 'transparent' : colors.grey;
+  const color = variant === 'primary' ? colors.white : colors.button;
 
   return (
     <RectButton style={[styles.container, { backgroundColor }]} {...{ onPress }}>
-      <Text style={[styles.label, { color }]}>{label}</Text>
+      <Text variant="button" style={{ color }}>
+        {label}
+      </Text>
     </RectButton>
   );
 }
@@ -31,9 +34,5 @@ const styles = StyleSheet.create({
     width: 245,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  label: {
-    fontSize: 16,
-    fontFamily: 'SFProText-Regular',
   },
 });

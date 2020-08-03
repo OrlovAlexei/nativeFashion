@@ -3,13 +3,15 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { AssetsModule, AuthModule } from './src/modules';
 import { ThemeProvider } from './src/modules/theme/provider';
+import { Routes } from './src/modules/navigation';
 
-const AuthenticationStack = createStackNavigator();
+const AuthenticationStack = createStackNavigator<Routes>();
 
 function AuthenticationNavigator() {
   return (
     <AuthenticationStack.Navigator headerMode="none">
       <AuthenticationStack.Screen name="Onboarding" component={AuthModule.Screen.Onboarding} />
+      <AuthenticationStack.Screen name="Welcome" component={AuthModule.Screen.Welcome} />
     </AuthenticationStack.Navigator>
   );
 }

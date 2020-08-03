@@ -9,6 +9,12 @@ export const theme = createTheme({
     l: 24,
     xl: 40,
   },
+  borderRadii: {
+    s: 4,
+    m: 10,
+    l: 25,
+    xl: 75,
+  },
   breakpoints: {},
   textVariants: {
     hero: {
@@ -30,6 +36,11 @@ export const theme = createTheme({
       color: 'title',
     },
     body: { fontSize: 16, lineHeight: 24, fontFamily: fontFamily.regular, color: 'body' },
+    button: {
+      fontSize: 15,
+      fontFamily: fontFamily.regular,
+      color: 'body',
+    },
   },
 });
 

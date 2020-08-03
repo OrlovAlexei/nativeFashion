@@ -4,12 +4,15 @@ import Animated, { multiply, divide } from 'react-native-reanimated';
 import { Slide, SLIDE_HEIGHT, SubSlide, Dot } from './components';
 import { interpolateColor, useScrollHandler } from 'react-native-redash';
 import { slides } from './slides';
+import { theme } from '../../../theme';
+import { StackNavigationProps } from '../../../navigation';
 
 const { width } = Dimensions.get('window');
 
-const BORDER_RADIUS = 75;
+interface IPropsOnboarding extends StackNavigationProps<'Onboarding'> {}
 
-export function Onboarding() {
+export function Onboarding(props: IPropsOnboarding) {
+  const { navigation } = props;
   const scroll = useRef<Animated.ScrollView>(null);
   const { scrollHandler, x } = useScrollHandler();
 
@@ -18,7 +21,11 @@ export function Onboarding() {
     outputRange: slides.map(({ color }) => color),
   });
 
-  const onPressHandler = (index: number) => () => {
+  const onPressHandler = (index: number, last: boolean) => () => {
+    if (last) {
+      navigation.navigate('Welcome');
+      return;
+    }
     if (!scroll.current) {
       return;
     }
@@ -61,7 +68,9 @@ export function Onboarding() {
           >
             {slides.map(({ subtitle, description }, index) => {
               const last = index + 1 === slides.length;
-              return <SubSlide key={index} onPress={onPressHandler(index)} {...{ subtitle, description, last }} />;
+              return (
+                <SubSlide key={index} onPress={onPressHandler(index, last)} {...{ subtitle, description, last }} />
+              );
             })}
           </Animated.View>
         </View>
@@ -75,13 +84,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  slider: { height: SLIDE_HEIGHT, borderBottomRightRadius: BORDER_RADIUS },
+  slider: { height: SLIDE_HEIGHT, borderBottomRightRadius: theme.borderRadii.xl },
   footer: { flex: 1 },
-  footerContent: { flex: 1, backgroundColor: 'white', borderTopLeftRadius: BORDER_RADIUS },
+  footerContent: { flex: 1, backgroundColor: 'white', borderTopLeftRadius: theme.borderRadii.xl },
   pagination: {
     ...StyleSheet.absoluteFillObject,
     flexDirection: 'row',
-    height: BORDER_RADIUS,
+    height: theme.borderRadii.xl,
     justifyContent: 'center',
     alignItems: 'center',
   },
