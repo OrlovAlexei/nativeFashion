@@ -4,6 +4,7 @@ import { ParamListBase, RouteProp } from '@react-navigation/native';
 export type Routes = {
   Onboarding: undefined;
   Welcome: undefined;
+  Login: undefined;
 };
 
 export interface StackNavigationProps<RouteName extends keyof ParamList, ParamList extends ParamListBase = Routes> {

@@ -12,6 +12,7 @@ function AuthenticationNavigator() {
     <AuthenticationStack.Navigator headerMode="none">
       <AuthenticationStack.Screen name="Onboarding" component={AuthModule.Screen.Onboarding} />
       <AuthenticationStack.Screen name="Welcome" component={AuthModule.Screen.Welcome} />
+      <AuthenticationStack.Screen name="Login" component={AuthModule.Screen.Login} />
     </AuthenticationStack.Navigator>
   );
 }
