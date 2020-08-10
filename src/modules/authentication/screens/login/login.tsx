@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../../../../components';
+import { Container } from '../../../../components';
 import { Text } from '../../../theme';
 
 interface IPropsLogin {}
@@ -7,5 +7,5 @@ interface IPropsLogin {}
 export function Login(props: IPropsLogin) {
   const {} = props;
 
-  return <Header children={<Text>Привет</Text>} />;
+  return <Container children={<Text>Привет</Text>} />;
 }
