@@ -16,7 +16,7 @@ export function Button(props: IPropsButton) {
 
   const backgroundColor =
     variant === 'primary' ? colors.primary : variant === 'transparent' ? 'transparent' : colors.grey;
-  const color = variant === 'primary' ? colors.white : colors.button;
+  const color = variant === 'primary' ? colors.white : colors.secondary;
 
   return (
     <RectButton style={[styles.container, { backgroundColor }]} {...{ onPress }}>

@@ -27,13 +27,13 @@ export const theme = createTheme({
     title1: {
       fontSize: 28,
       fontFamily: fontFamily.semibold,
-      color: 'title',
+      color: 'secondary',
     },
     title2: {
       fontSize: 24,
       lineHeight: 30,
       fontFamily: fontFamily.semibold,
-      color: 'title',
+      color: 'secondary',
     },
     body: { fontSize: 16, lineHeight: 24, fontFamily: fontFamily.regular, color: 'body' },
     button: {

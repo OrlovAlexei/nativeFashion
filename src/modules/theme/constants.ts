@@ -6,12 +6,12 @@ export const palette = {
   // greenLight: '#56DCBA',
   // greenPrimary: '#0ECD9D',
   // greenDark: '#0A906E',
+  primary: '#2CB9B0',
+  secondary: '#0C0D34',
 
   black: '#0B0B0B',
   white: '#F0F2F3',
-  button: '#0C0D34',
 
-  primary: '#2CB9B0',
   title: '#0C0D34',
   body: 'rgba(12, 13, 52, 0.7)',
   grey: 'rgba(12, 13, 52, 0.05)',

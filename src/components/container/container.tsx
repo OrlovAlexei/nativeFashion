@@ -8,17 +8,20 @@ const height = width * aspectRatio;
 
 interface IPropsContainer {
   children: ReactNode;
+  footer: ReactNode;
 }
 
 export const assets = [require('../../../assets/patterns/1.png')];
 
 export function Container(props: IPropsContainer) {
-  const { children } = props;
+  const { children, footer } = props;
   return (
-    <Box flex={1} backgroundColor="white">
+    <Box flex={1} backgroundColor="secondary">
       <StatusBar barStyle="light-content" />
-      <Box borderBottomLeftRadius="xl" overflow="hidden" height={height * 0.61}>
-        <Image source={assets[0]} style={{ width, height, borderBottomLeftRadius: theme.borderRadii.xl }} />
+      <Box backgroundColor="white">
+        <Box borderBottomLeftRadius="xl" overflow="hidden" height={height * 0.61}>
+          <Image source={assets[0]} style={{ width, height, borderBottomLeftRadius: theme.borderRadii.xl }} />
+        </Box>
       </Box>
 
       <Box flex={1} overflow="hidden">
@@ -26,6 +29,10 @@ export function Container(props: IPropsContainer) {
         <Box borderRadius="xl" borderTopLeftRadius={0} backgroundColor="white" flex={1}>
           {children}
         </Box>
+      </Box>
+
+      <Box height={200} backgroundColor="secondary">
+        {footer}
       </Box>
     </Box>
   );
