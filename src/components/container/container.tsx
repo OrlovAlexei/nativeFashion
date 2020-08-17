@@ -1,6 +1,7 @@
 import { Dimensions, Image, StyleSheet, StatusBar } from 'react-native';
 import React, { ReactNode } from 'react';
 import { Box, theme } from '../../modules/theme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width } = Dimensions.get('window');
 const aspectRatio = 750 / 1125;
@@ -15,6 +16,7 @@ export const assets = [require('../../../assets/patterns/1.png')];
 
 export function Container(props: IPropsContainer) {
   const { children, footer } = props;
+  const { bottom } = useSafeAreaInsets();
   return (
     <Box flex={1} backgroundColor="secondary">
       <StatusBar barStyle="light-content" />
@@ -31,9 +33,10 @@ export function Container(props: IPropsContainer) {
         </Box>
       </Box>
 
-      <Box height={200} backgroundColor="secondary">
+      <Box backgroundColor="secondary" paddingTop="m">
         {footer}
       </Box>
+      <Box height={bottom} />
     </Box>
   );
 }

@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AssetsModule, AuthModule } from './src/modules';
 import { ThemeProvider } from './src/modules/theme/provider';
 import { Routes } from './src/modules/navigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const AuthenticationStack = createStackNavigator<Routes>();
 
@@ -21,7 +22,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <AssetsModule.LoadAssets>
-        <AuthenticationNavigator />
+        <SafeAreaProvider>
+          <AuthenticationNavigator />
+        </SafeAreaProvider>
       </AssetsModule.LoadAssets>
     </ThemeProvider>
   );
