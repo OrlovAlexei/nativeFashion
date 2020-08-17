@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import Animated, { multiply, divide } from 'react-native-reanimated';
-import { Slide, SLIDE_HEIGHT, SubSlide, Dot } from './components';
+import { Slide, SLIDE_HEIGHT, SubSlide, Dot } from '../../components';
 import { interpolateColor, useScrollHandler } from 'react-native-redash';
 import { slides } from './slides';
 import { theme } from '../../../theme';

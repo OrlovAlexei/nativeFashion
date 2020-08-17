@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button } from '../../../../../../components';
-import { Text } from '../../../../../theme';
+import { Button } from '../../../../components';
+import { Text } from '../../../theme';
 
 interface IPropsSubSlide {
   subtitle: string;

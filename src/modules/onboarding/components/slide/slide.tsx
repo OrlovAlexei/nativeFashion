@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
-import { Text } from '../../../../../theme';
+import { Text } from '../../../theme';
 
 interface IPropsSlide {
   title: string;
