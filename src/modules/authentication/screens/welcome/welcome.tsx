@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from '../../../theme';
-import { Button } from '../onboarding/components/button';
+import { Button } from '../../../../components';
 import { StackNavigationProps } from '../../../navigation';
 
 interface IPropsWelcome extends StackNavigationProps<'Welcome'> {}

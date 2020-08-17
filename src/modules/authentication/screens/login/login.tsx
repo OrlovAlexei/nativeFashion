@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, SocialIcons } from '../../../../components';
 import { Text, Box } from '../../../theme';
-import { Button } from '../onboarding/components/button';
+import { Button } from '../../../../components';
 
 interface IPropsLogin {}
 

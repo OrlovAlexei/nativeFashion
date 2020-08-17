@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { RectButton } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
-import { useTheme, Text } from '../../../../../theme';
+import { useTheme, Text } from '../../modules/theme';
 
 interface IPropsButton {
   label?: string;

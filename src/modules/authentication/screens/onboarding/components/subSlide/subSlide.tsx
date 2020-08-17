@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button } from '../button';
+import { Button } from '../../../../../../components';
 import { Text } from '../../../../../theme';
 
 interface IPropsSubSlide {
