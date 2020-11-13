@@ -11,15 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="353b8d01-e34c-48fa-98de-930aa277a612" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/patterns/1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/authentication/screens/login/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/authentication/screens/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/authentication/screens/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/authentication/screens/welcome/welcome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/authentication/screens/welcome/welcome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/navigation/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/navigation/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +35,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -54,9 +49,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -89,6 +84,7 @@
       <workItem from="1596800722860" duration="12000" />
       <workItem from="1596800794601" duration="4000" />
       <workItem from="1596800807682" duration="19000" />
+      <workItem from="1605292611336" duration="435000" />
     </task>
     <servers />
   </component>
@@ -106,43 +102,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2041" y="56" width="1799" height="834" key="#Live_Templates" timestamp="1596573349397">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2041" y="56" width="1799" height="834" key="#Live_Templates/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596573349397" />
-    <state x="2663" y="299" width="424" height="487" key="FileChooserDialogImpl" timestamp="1596571717503">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2663" y="299" width="424" height="487" key="FileChooserDialogImpl/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596571717503" />
-    <state width="1920" height="302" key="GridCell.Tab.0.bottom" timestamp="1596573884149">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="302" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596573884149" />
-    <state width="1920" height="302" key="GridCell.Tab.0.center" timestamp="1596573884149">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="302" key="GridCell.Tab.0.center/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596573884149" />
-    <state width="1920" height="302" key="GridCell.Tab.0.left" timestamp="1596573884149">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="302" key="GridCell.Tab.0.left/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596573884149" />
-    <state width="1920" height="302" key="GridCell.Tab.0.right" timestamp="1596573884149">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1920" height="302" key="GridCell.Tab.0.right/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596573884149" />
-    <state x="2369" y="175" width="1022" height="733" key="SettingsEditor" timestamp="1596572909661">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2369" y="175" width="1022" height="733" key="SettingsEditor/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596572909661" />
-    <state x="2662" y="453" width="426" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596800729714">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2662" y="453" width="426" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596800729714" />
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1596800818586">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.30.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596800818586" />
   </component>
 </project>
