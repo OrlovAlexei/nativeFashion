@@ -6,6 +6,8 @@ import { ThemeProvider } from './src/modules/theme/provider';
 import { Routes } from './src/modules/navigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { OnboardingModule } from './src/modules/onboarding';
+import { StatusBar } from 'react-native';
+import { Box } from './src/modules/theme';
 
 const AuthenticationStack = createStackNavigator<Routes>();
 
@@ -24,6 +26,7 @@ export default function App() {
     <ThemeProvider>
       <AssetsModule.LoadAssets>
         <SafeAreaProvider>
+          <StatusBar barStyle="light-content" />
           <AuthenticationNavigator />
         </SafeAreaProvider>
       </AssetsModule.LoadAssets>
